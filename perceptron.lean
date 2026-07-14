@@ -32,9 +32,8 @@ structure Sample (d : ℕ) where
   x : Fin d → ℝ
   y : ℝ
   hy : y = 1 ∨ y = -1
-abbrev Dataset (d n : ℕ) := Fin n → Sample d
--- Same as `dotProduct` (definitionally); we alias so Mathlib's
--- `dotProduct_*` lemmas apply directly.
+abbrev Dataset (d n : ℕ) := Fin n → Sample D
+
 def dot {d} (x1 : Fin d → ℝ) (x2 : Fin d → ℝ) : ℝ := dotProduct x1 x2
 
 def linearly_separable {d n} (D : Dataset d n) (γ : ℝ) :=
